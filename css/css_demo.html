@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Basics</title>
+    <!-- <link href="style.css" rel="stylesheet"> -->
+    <style>
+        p{
+            padding: 20px;
+            border: 3px dotted red;
+        }
+        #second{
+            border: 3px solid green;
+        }
+        ol{
+            list-style-type: circle;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h2>Cascading Style Sheets (CSS)</h2>
+    <p style="text-align: justify; background-color: aquamarine; width: 50%;">
+        CSS is used to style and format HTML elements.
+        HTML defines structure, CSS defines appearance (color, size, layout, spacing).
+        Styles are applied based on priority rules when multiple CSS rules affect the same HTML element. 
+        CSS follows an order of precedence to decide which style wins.
+    </p>
+    <h3>Cascading Priority Order (High → Low)</h3>
+    <p id="second">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione culpa laudantium illum! Laborum fuga odit, cupiditate eaque perferendis natus illum quas distinctio dolore eos tenetur placeat veniam temporibus soluta beatae?</p>
+    <ol style="color: brown;">
+        <li>Inline CSS</li>
+        <li>Internal CSS</li>
+        <li>External CSS</li>
+        <li>Browser default styles</li>
+    </ol>
+</body>
+
+</html>
