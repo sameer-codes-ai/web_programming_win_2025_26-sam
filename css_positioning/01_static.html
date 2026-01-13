@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Positioning and Display</title>
+    <!--
+        Static: The default positioning where elements are displayed in the normal document flow.
+        Relative: Positioned relative to its normal position in the document flow.
+        Absolute: Positioned relative to the nearest positioned ancestor (non-static).
+        Fixed: Positioned relative to the viewport, unaffected by scrolling.
+        Sticky: Positioned relative to the nearest scrollable ancestor, staying in view as you scroll past it.
+    -->
+    <style>
+        .container{
+            width: 500px;
+            margin: 0 auto;
+            border: 2px solid red;
+            padding: 10px;
+        }
+        h1{
+            text-align: center;
+        }
+        p{
+            background-color: aqua;
+            border: 2px solid blue;
+        }
+        #static{
+            position: static;
+            background-color: yellow;
+            border: 2px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>CSS Positioning and Display</h1>
+
+        <p>
+            This is a basic block level element. The adjacent block level elements display on new lines below.
+        </p>
+
+        <p id="static">
+            Static: The default positioning where elements are displayed in the normal document flow.
+        </p>
+
+        <p>
+            In CSS, top, bottom, left, and right are properties used to control the spacing, positioning, and sizing of
+            elements relative to their surrounding elements.
+        </p>
+    </div>
+</body>
+
+</html>
