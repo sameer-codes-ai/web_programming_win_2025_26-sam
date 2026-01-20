@@ -5,10 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Media Queries</title>
+    <!--
+        Design a web page that automatically adapt to any screen (device)
+    -->
     <style>
+        div{
+            width: 500px;
+            background-color: aqua;
+        }
         /* Mobile styles */
         @media (max-width: 600px) {
-           
+           div{
+            background-color: brown;
+        
+           }
+           h1{
+            font-size: 10px;
+           }
         }
 
         /* Tablet styles */

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-    display: flex; - Makes the container a flex container to arrange its children using flexbox layout.
+    display: flex; - Makes the container a flex container to arrange its children using flexbox layout (How elements are arranged).
     flex-direction: row; - Aligns child elements horizontally in a row (default direction).
     justify-content: center; - Horizontally centers the child elements within the container.
     align-items: center; - Vertically centers the child elements within the container.
@@ -14,14 +14,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flexbox Layout</title>
     <style>
-
+        div{
+            width: 200px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            background-color: antiquewhite;
+        }
+        h1{
+            background-color: aquamarine;
+            margin: 5px;
+            text-align: center;
+            flex-basis: 50px;
+            flex-grow: 1;
+        }
+        #grow{
+            flex-grow: 2;
+        }
     </style>
 </head>
 <body>
     <div>
         <h1>0</h1>
         <h1>1</h1>
-        <h1>2</h1>
+        <h1 id="grow">2</h1>
         <h1>3</h1>
         <h1>4</h1>
         <h1>5</h1>
