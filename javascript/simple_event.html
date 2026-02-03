@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Student Greeting</title>
+</head>
+
+<body>
+
+    <h2>Student Greeting Generator</h2>
+    <input type="text" id="studentName" placeholder="Enter your name">
+    <button  onclick="greet()">Submit</button>
+    <p id="result">Default Value</p>
+    <script>
+        function greet(){
+            let name = document.getElementById("studentName").value;
+            // window.alert("Hi "+name);
+            // console.log("Hi "+ name);
+            document.getElementById("result").textContent = "Hi "+ name;
+        }
+    </script>
+
+</body>
+
+</html>
