@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 300px;
+            padding: 6px;
+        }
+
+        /* Remove browser blue focus outline */
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+        }
+
+        button {
+            margin-right: 10px;
+            padding: 6px 12px;
+        }
+
+        .gender-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .gender-row input[type="radio"] {
+            width: auto;
+        }
+
+        .gender-row label {
+            font-weight: normal;
+            margin-bottom: 0;
+        }
+
+        /* Image preview style */
+        #preview {
+            margin-top: 10px;
+            width: 150px;
+            height: 150px;
+            border: 1px solid #999;
+            object-fit: cover;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Student Registration Form</h2>
+
+    <form action="/register" method="get" autocomplete="off">
+
+        <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Your Full Name" required
+                oninput="changeCase()" onfocus="applyStyle()" onblur="removeStyle()">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="example@vit.ac.in">
+        </div>
+
+        <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob">
+        </div>
+
+        <div class="form-group">
+            <label>Gender</label>
+            <div class="gender-row">
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male</label>
+
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female">Female</label>
+
+                <input type="radio" id="other" name="gender" value="Other">
+                <label for="other">Other</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="school">School</label>
+            <select id="school" name="school">
+                <option value="">-- Select --</option>
+                <option value="SCOPE">SCOPE</option>
+                <option value="SCORE">SCORE</option>
+                <option value="SMEC">SMEC</option>
+                <option value="SBST">SBST</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="4">Vellore, Tamil Nadu</textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="photo">Upload Photo</label>
+            <input type="file" id="photo" name="photo" accept="image/*" onchange="previewImage()">
+            <img id="preview" alt="Image Preview">
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Register</button>
+            <button type="reset" onclick="clearPreview()">Clear</button>
+        </div>
+
+    </form>
+
+    <script>
+        // Define nameInput here
+        const nameInput = document.getElementById('fullname');
+        function changeCase() {
+            nameInput.value = nameInput.value.toUpperCase();
+            if (nameInput.value.length >= 3) {
+                nameInput.style.border = "2px solid green";
+            } else {
+                nameInput.style.border = "2px solid red";
+            }
+        }
+
+        function applyStyle() {
+            if (nameInput.value.length < 3) {
+                nameInput.style.border = "2px solid red";
+            }
+        }
+
+        function removeStyle() {
+            nameInput.style.border = "";
+        }
+
+        // Image preview function
+        function previewImage() {
+            const preview = document.getElementById("preview");
+            const file = document.getElementById("photo").files[0];
+
+            if (file) {
+                preview.src = URL.createObjectURL(file);
+                preview.style.display = "block";
+            }
+        }
+
+        function clearPreview() {
+            const preview = document.getElementById("preview");
+            preview.src = "";
+            preview.style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>

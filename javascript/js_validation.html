@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Validation with CSS</title>
+    <!--
+        Basic JavaScript Events
+        1. onclick: Triggered when the user clicks on an element.
+        2. onsubmit: Triggered when a form is submitted.
+        3. oninput: Triggered immediately when the value of an input field changes while the user is typing.
+        4. onfocus: Triggered when an input field or element gains focus. 
+        5. onblur: Triggered when an element loses focus 
+        6. onchange: Triggered when the value of an input field is changed.
+    -->
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+        input:focus{
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" name="fullname" id="fullname"
+        oninput="convertCase()"
+        onfocus="applyStyle()"
+        onblur="removeStyle()">
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        function convertCase(){
+            let nameInput = document.getElementById("fullname");
+            nameInput.value = nameInput.value.toUpperCase();
+            if(nameInput.value.length >= 3){
+                nameInput.style.border = "2px solid green";
+            }else{
+                nameInput.style.border = "2px solid red";
+            }
+        }
+        function applyStyle(){
+            let nameInput = document.getElementById("fullname");
+            nameInput.style.border = "2px solid red";
+        }
+        function removeStyle(){
+            let nameInput = document.getElementById("fullname");
+            nameInput.style.border = "";
+        }
+    </script>
+</body>
+</html>
