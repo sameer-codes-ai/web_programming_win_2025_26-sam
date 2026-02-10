@@ -4,11 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS with CSS (Image Preview)</title>
+    <style>
+        #preview{
+            display: none;
+            width: 200px;
+            height: 200px;
+            margin-top: 20px;
+            border: 2px solid blue;
+        }
+    </style>
 </head>
 <body>
     <form>
-        <input type="file" name="photo" id="photo"> 
-        <img id="preview" alt="Image Prview">
+        <input type="file" name="photo" id="photo" accept="image/*"
+        onchange="previewImage()"> 
+        <img id="preview" alt="Image Preview">
+        <button type="button" onclick="clearImage()">Clear</button>
     </form>
+    <script>
+        function previewImage(){
+            const preview = document.getElementById("preview");
+            const file = document.getElementById("photo").files[0];
+            if(file){
+                preview.src = URL.createObjectURL(file);
+                preview.style.display = "block";
+            }
+        }
+        function clearImage(){
+            preview.src = ""
+            preview.style.display = "none";
+        }
+    </script>
 </body>
 </html>
