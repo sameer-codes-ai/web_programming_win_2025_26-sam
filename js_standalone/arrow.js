@@ -13,7 +13,7 @@ function square(x, y){
     return x * x;
 }
 
-// const square = (x, y) => x * x;
+const squareOfNo = (x, y) => x * x;
 
 function add(...numbers){
     let sum = 0;
@@ -24,3 +24,6 @@ function add(...numbers){
 }
 
 console.log(add(1,2,3,4,5));
+console.log(greetArrow());
+console.log(square(4));
+console.log(squareOfNo(5));
