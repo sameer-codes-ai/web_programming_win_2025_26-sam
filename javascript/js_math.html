@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Math</title>
+</head>
+<body>
+    <form>
+        <input type="number" name="number" id="number">
+        <button type="button" onclick="doMath()">Submit</button>
+        <div id="result">
+
+        </div>
+    </form>
+    <script>
+        //$number = $_GET['number'] for name attribute in server side code
+        function doMath(){
+            const number = document.getElementById("number").value;
+            let result = Math.sqrt(number).toFixed(2);
+            window.alert(result);
+            document.getElementById("result").innerHTML = 
+                "<h1>The square root of "+ number + " is "+ result + "<h1>";
+        }
+    </script>
+</body>
+</html>
