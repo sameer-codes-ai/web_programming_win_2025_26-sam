@@ -1,0 +1,21 @@
+<html>
+<!--
+A radian is defined as the arc length (s) divided by the radius (r). Since the full
+circumference of a circle is 2πr, the total angle of a complete circle is: 2πr / r = 2π
+radians, Therefore: 2π radians = 360°
+-->
+
+<body>
+    <canvas id="c2" width="400" height="200"></canvas>
+    <script>
+        const canvas = document.getElementById("c2");
+        const ctx = canvas.getContext("2d");
+        ctx.beginPath(); // Start a new path
+        ctx.arc(200, 100, 50, 0, 2 * Math.PI); // x, y, radius, startAngle, endAngle
+        ctx.fillStyle = "red"; // Set fill color
+        ctx.fill(); // Fill the circle
+    </script>
+</body>
+
+
+</html>
