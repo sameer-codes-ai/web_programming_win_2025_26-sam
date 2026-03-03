@@ -1,0 +1,51 @@
+<html>
+
+<body>
+    <canvas id="ballCanvas" width="400" height="250"></canvas>
+
+    <script>
+        const canvas = document.getElementById("ballCanvas");
+        const ctx = canvas.getContext("2d");
+
+        let x = 50;
+        let y = 50;
+        let dx = 3;
+        let dy = 2;
+        const radius = 15;
+
+        function drawBall() {
+
+            // Clear previous frame
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // ----- Draw border rectangle -----
+            ctx.strokeStyle = "black"; // border color
+            ctx.lineWidth = 3;         // border thickness
+            ctx.strokeRect(0, 0, canvas.width, canvas.height);
+
+            // ----- Draw ball -----
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, 2 * Math.PI);
+            ctx.fillStyle = "orange";
+            ctx.fill();
+
+            // ----- Bounce from walls -----
+            if (x + radius > canvas.width || x - radius < 0) {
+                dx = -dx;
+            }
+
+            if (y + radius > canvas.height || y - radius < 0) {
+                dy = -dy;
+            }
+
+            // Update position
+            x += dx;
+            y += dy;
+        }
+
+        // Run animation
+        setInterval(drawBall, 20);
+    </script>
+
+</body>
+</html>

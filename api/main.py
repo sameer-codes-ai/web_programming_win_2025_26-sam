@@ -21,10 +21,7 @@ students = [
 # API - Get All Students => http://127.0.0.1:5000/students
 @app.route('/students', methods=['GET'])
 def get_students():
-    return jsonify({
-        "status": "success",
-        "data": students
-    }), 200
+    return jsonify(students), 200
 
 
 # API - Get All Students => http://127.0.0.1:5000/students/24BCE101
@@ -50,4 +47,4 @@ def internal_error():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0")
