@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>React with CDN</title>
+
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    </head>
+    <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function Header(props){
+            return (
+                <div style={props.design}>
+                    <h1>Welcome {props.name}</h1>
+                    <p>VIT {props.campus}</p>
+                </div>
+            );
+        }
+        function App(){
+            const styleHeaderOne = {
+                backgroundColor: "lightgray",
+                color: "blue",
+                margin: "10px",
+                padding: "20px",
+                textAlign: "center"
+            }
+            const styleHeaderTwo = {
+                backgroundColor: "lightblue",
+                color: "blue",
+                margin: "10px",
+                padding: "20px",
+                textAlign: "center"
+            }
+            const styleHeaderThree = {
+                backgroundColor: "lightyelloe",
+                color: "blue",
+                margin: "10px",
+                padding: "20px",
+                textAlign: "center"
+            }
+            return (
+                <div>
+                    <Header name="Kumar" campus="Chennai" design = {styleHeaderOne}/>
+                    <Header name="Arun" campus="Vellore" design = {{backgroundColor: "red"}}/>
+                    <Header name="Raja" campus="AP" design = {styleHeaderThree}/>
+                </div>
+            )
+        }
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<App />);
+    </script>
+    </body>
+</html>
