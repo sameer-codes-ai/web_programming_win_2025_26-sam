@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>InnerHTML Example</title>
+</head>
+<body>
+    <h2>Student Information</h2>
+
+    <!-- Button to load content -->
+    <button onclick="loadStudent()">Load Student Details</button>
+
+    <!-- Div where dynamic content will be displayed -->
+    <div id="content"></div>
+
+    <script>
+        function loadStudent() {
+            // Dynamic content
+            var studentData = `
+                <h3>Student Details</h3>
+                <p><strong>Name:</strong> Arjun Kumar</p>
+                <p><strong>Department:</strong> Computer Science</p>
+                <p><strong>Year:</strong> 2nd Year</p>
+            `;
+
+            // Insert content dynamically
+            document.getElementById("content").innerHTML = studentData;
+        }
+    </script>
+
+</body>
+</html>
